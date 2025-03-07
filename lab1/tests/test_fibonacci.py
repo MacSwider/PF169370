@@ -4,7 +4,6 @@ from src.fibonacci import fibonacci
 class TestFibonacci(unittest.TestCase):
 
 
-
     def testFibonacci(self):
         self.assertEqual(fibonacci(0),0)
         self.assertEqual(fibonacci(1),1)
