@@ -1,0 +1,17 @@
+{
+  "name": "Bastion-Class",
+  "HP": 30,
+  "Kinetic-Armor": 10,
+  "Thermal-Armor": 8,
+  "Chemical-Armor": 6,
+  "Heat Cap.": 16,
+  "mobility": 5,
+  "weapons": {
+    "left_arm": null,
+    "right_arm": null,
+    "back_left": null,
+    "back_right": null
+  },
+  "keywords": ["Heavy", "Bipedal"],
+  "abilities": ["Fortify", "Reactive Armor"]
+}

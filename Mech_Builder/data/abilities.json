@@ -1,0 +1,10 @@
+{
+  "Overload": "Increase the Strength of all THERMAL weapons by +1 this turn, but generate 2 additional Heat.",
+  "Fortify": "Increase one types of armor (Kinetic, Thermal, Chemical) by +2 until the end of battleround",
+  "Reactive Armor": "The first attack that hits this mech each turn deals D3 less damage.",
+  "Smoke Launcher": "BEFORE enemy attack use this ability to reduce HIT PROPABILITY by 1",
+  "Reinforce": "Reinforces structure – reduce all incoming damage by 1 this turn.",
+  "Markelight": "RECON unit only. In your ATTACK PHASE you select one FRIENDLY unit and one ENEMY Unit within line of sight. ADD 1 to aim assist of FRIENDLY unit against that target",
+  "Lockdown": "This mech may spend an action to Lock Down. While Locked Down, it gains +2 Aim and cannot be move or charge until next battleround",
+  "Stealth": "This unit can not be target of attack unless withing range of 12 inch."
+}

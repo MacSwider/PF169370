@@ -1,0 +1,72 @@
+{
+  "None": {},
+  "PP-44 Machinegun": {
+    "aim_assist": 4,
+    "strength": 5,
+    "damage": 2,
+    "range": 12,
+    "weight": 5,
+    "keywords": ["Kinetic", "Rapid Fire"]
+  },
+
+  "RD-25A Rifle": {
+    "aim_assist": 4,
+    "strength": 6,
+    "damage": 3,
+    "range": 18,
+    "weight": 6,
+    "keywords": ["Kinetic", "Rapid Fire"]
+  },
+
+  "RD-45A Burst Rifle": {
+    "aim_assist": 4,
+    "strength": 6,
+    "damage": 2,
+    "range": 24,
+    "weight": 6,
+    "keywords": ["Kinetic", "Burst Fire"]
+  },
+
+  "A55RS Submachine": {
+    "aim_assist": 4,
+    "strength": 7,
+    "damage": 2,
+    "range": 12,
+    "weight": 6,
+    "keywords": ["Chemical", "Rapid Fire"]
+  },
+
+  "PL-99 Plasma Gun": {
+    "aim_assist": 5,
+    "strength": 7,
+    "damage": 3,
+    "range": 10,
+    "weight": 6,
+    "keywords": ["Thermal", "Plasma", "Overcharge"]
+  },
+  "VX-Launcher": {
+    "aim_assist": 5,
+    "strength": 6,
+    "damage": 2,
+    "range": 15,
+    "weight": 7,
+    "keywords": ["Chemical"]
+  },
+  "SR-88 Sniper Rifle": {
+    "aim_assist": 3,
+    "strength": 8,
+    "damage": 4,
+    "range": 24,
+    "weight": 6,
+    "keywords": ["Kinetic", "Stationary"]
+  },
+
+  "PB-1 Pilebunker": {
+    "aim_assist": 3,
+    "strength": 11,
+    "damage": 9,
+    "range": 2,
+    "weight": 5,
+    "keywords": ["Kinetic","Close Quarter"]
+  }
+}

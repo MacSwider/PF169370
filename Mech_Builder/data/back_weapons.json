@@ -1,0 +1,43 @@
+{
+  "None": {},
+  "MLRS Barrage": {
+    "aim_assist": 2,
+    "strength": 5,
+    "damage": 3,
+    "range": 20,
+    "weight": 6,
+    "keywords": ["Chemical", "Radar Guided"]
+  },
+  "Heavy Plasma Cannon": {
+    "aim_assist": 5,
+    "strength": 9,
+    "damage": 5,
+    "range": 18,
+    "weight": 10,
+    "keywords": ["Thermal", "Plasma", "Overcharge"]
+  },
+  "Risel Twin Autocannon": {
+    "aim_assist": 4,
+    "strength": 6,
+    "damage": 2,
+    "range": 14,
+    "weight": 6,
+    "keywords": ["Kinetic", "Rapid Fire", "Stationary"]
+  },
+  "DBT-2 Rocket Pod": {
+    "aim_assist": 5,
+    "strength": 5,
+    "damage": 2,
+    "range": 16,
+    "weight": 4,
+    "keywords": ["Chemical", "Radar Guided"]
+  },
+  "DBT-4 Rocket Pod": {
+    "aim_assist": 5,
+    "strength": 5,
+    "damage": 4,
+    "range": 16,
+    "weight": 6,
+    "keywords": ["Chemical", "Radar Guided"]
+  }
+}

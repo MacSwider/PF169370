@@ -1,0 +1,17 @@
+{
+  "name": "Atlas-Class",
+  "HP": 24,
+  "Kinetic-Armor": 7,
+  "Thermal-Armor": 6,
+  "Chemical-Armor": 4,
+  "Heat Cap.": 20,
+  "mobility": 10,
+  "weapons": {
+    "left_arm": null,
+    "right_arm": null,
+    "back_left": null,
+    "back_right": null
+  },
+  "keywords": ["Light", "Bipedal", "Recon"],
+  "abilities": ["Markerlight", "Smoke Launcher"]
+}

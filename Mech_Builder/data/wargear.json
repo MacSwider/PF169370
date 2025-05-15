@@ -1,0 +1,27 @@
+{
+  "APS System": {
+    "description": "Reduce damage of PLASMA weapon by 1",
+    "limit": 2
+  },
+  "Stealth Module": {
+    "description": "This unit get STEALTH keyword",
+    "limit": 2
+  },
+  "Experimental Reactive Plating": {
+    "description": "For every KINETIC attack that hit this unit throw D6. On +5 damage is reduced to zero",
+    "limit": 2
+  },
+  "DS Repair Drone": {
+    "description": "Once per Battle you can use this system to restore D6 Armor Points",
+    "limit": 2
+  },
+  "Smoke Launcher": {
+    "description": "BEFORE enemy attack use this system to reduce his AIM ASSIST by 1",
+    "limit": 4
+  },
+  "Liquid Metal Heatsink": {
+    "description": "When OVERHEAT reduce HEAT by 2D6 in addition to normal HEAT REDUCTION",
+    "limit": 2
+  }
+}
+
