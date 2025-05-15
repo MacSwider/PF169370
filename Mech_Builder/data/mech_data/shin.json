@@ -1,0 +1,17 @@
+{
+  "name": "Shin-Class",
+  "HP": 20,
+  "Kinetic-Armor": 4,
+  "Thermal-Armor": 6,
+  "Chemical-Armor": 6,
+  "Heat Cap.": 15,
+  "mobility": 10,
+  "weapons": {
+    "left_arm": null,
+    "right_arm": null,
+    "back_left": null,
+    "back_right": null
+  },
+  "keywords": ["Light", "Reverse-Joint"],
+  "abilities": ["Stealth", "Overload"]
+}

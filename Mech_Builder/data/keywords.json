@@ -1,0 +1,21 @@
+{
+  "Rapid Fire": "This weapon can shoot TWICE within HALF of its range",
+  "Burst Fire": "This weapon can re-roll its aim assist throw",
+  "Stationary": "This weapon gain +1 to AIM ASSIST if unit didn't move ",
+  "Radar Guided": "This weapon can shoot target without direct line of sight",
+  "Kinetic": "This weapon deals damage against kinetic armor",
+  "Chemical": "This weapon deals damage against chemical armor",
+  "Thermal": "This weapon deals damage against thermal armor and add one stack of HEAT for every shoot",
+  "Overcharge": "Can be fired with +1 DAMAGE and +1 AP , but generates additional 1 HEAT",
+  "Plasma": "Reduce target's save role by -1",
+  "Bipedal": "No benefit",
+  "Tank Thread": "This unit can shoot after charge",
+  "Reverse-Joint": "This unit can re-roll it's charge throw",
+  "Quad-Leg": "This unit can benefit from STATIONARY keyword even if it moved ",
+  "Light": "Max carrying weight is 15",
+  "Medium": "Max carrying weight is 20",
+  "Heavy": "Max carrying weight is 25",
+  "Recon": "After begining of first battleround this unit can make 6'' move before MOVEMENT PHASE",
+  "Close Quarter": "This weapon can only CAN NOT benefit from range bonus"
+
+}

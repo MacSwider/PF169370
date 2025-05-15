@@ -1,0 +1,17 @@
+{
+  "name": "Vulture-Class",
+  "HP": 8,
+  "Kinetic-Armor": 4,
+  "Thermal-Armor": 3,
+  "Chemical-Armor": 3,
+  "Heat Cap.": 12,
+  "mobility": 8,
+  "weapons": {
+    "left_arm": "Select",
+    "right_arm": "Select",
+    "back_left": null,
+    "back_right": null
+  },
+  "keywords": ["Medium", "Bipedal"],
+  "abilities": ["Smoke Launcher", "Fortify"]
+}

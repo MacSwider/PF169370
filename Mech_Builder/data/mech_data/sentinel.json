@@ -1,0 +1,17 @@
+{
+  "name": "Sentinel-Class",
+  "HP": 28,
+  "Kinetic-Armor": 4,
+  "Thermal-Armor": 5,
+  "Chemical-Armor": 3,
+  "Heat Cap.": 24,
+  "mobility": 6,
+  "weapons": {
+    "left_arm": null,
+    "right_arm": null,
+    "back_left": null,
+    "back_right": null
+  },
+  "keywords": ["Heavy", "Quad-Leg"],
+  "abilities": ["Overload", "Fortify"]
+}

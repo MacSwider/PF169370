@@ -1,0 +1,17 @@
+{
+  "name": "Goliath-Class",
+  "HP": 32,
+  "Kinetic-Armor": 6,
+  "Thermal-Armor": 8,
+  "Chemical-Armor": 10,
+  "Heat Cap.": 20,
+  "mobility": 6,
+  "weapons": {
+    "left_arm": null,
+    "right_arm": null,
+    "back_left": null,
+    "back_right": null
+  },
+  "keywords": ["Heavy", "Reverse-Joint"],
+  "abilities": ["Reinforce",  "Reactive Armor"]
+}
