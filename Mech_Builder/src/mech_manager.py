@@ -19,13 +19,15 @@ def load_mech_files():
 
 def load_mech_data(mech_name):
     # Load mechs data from JSON.
-
-    path = os.path.join(MECH_DATA_FOLDER, mech_name + ".json")
+    # Convert mech name to lowercase and remove -Class suffix
+    # Faster than renaming every json file
+    file_name = mech_name.lower().replace("-class", "")
+    path = os.path.join(MECH_DATA_FOLDER, file_name + ".json")
     try:
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        if "armor" not in data:  # Do wyjebenia
+        if "armor" not in data:
             kinetic = data.get("Kinetic-Armor", 0)
             thermal = data.get("Thermal-Armor", 0)
             chemical = data.get("Chemical-Armor", 0)

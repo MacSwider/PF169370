@@ -12,18 +12,18 @@ Projekt aplikacji okienkowej do tworzenia list do systemu bitewnego nad którym 
 
 ```
 Mech_Builder/
-├── data/
-│   ├── mech_data/
-│   ├── abilities.json
-│   ├── back_weapons.json
-│   └── keywords.json
-│   └── wargear.json
-│   └── keywords.json
 ├── src/
 │   ├── main.py
 │   ├── gui.py
 │   ├── mech_manager.py
 │   └── saves.py
+│   └── data/
+│       ├── mech_data/
+│       ├── abilities.json
+│       ├── back_weapons.json
+│       ├── keywords.json
+│       ├── wargear.json
+│       └── keywords.json
 ├── tests/
 │   ├── test_gui.py
 │   ├── test_mech_manager.py
@@ -31,11 +31,14 @@ Mech_Builder/
 └── README.md
 └── requirements.txt
 ```
-
+## Uruchomienie
+``
+run main.py
+``
 ## Testowanie
-
+``
 python -m unittest discover -s tests -p "*.py"
-
+``
 ##
 
 

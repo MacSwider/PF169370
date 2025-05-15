@@ -3,8 +3,7 @@ from unittest.mock import patch, mock_open
 import sys
 import os
 
-# Add project directory to path so we can import modules
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 from src.saves import save_list_to_txt, load_mechs_from_txt
 
