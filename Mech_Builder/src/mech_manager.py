@@ -9,6 +9,7 @@ KEYWORD_FILE = os.path.join(DATA_DIR, "keywords.json")
 ABILITY_FILE = os.path.join(DATA_DIR, "abilities.json")
 WARGEAR_FILE = os.path.join(DATA_DIR, "wargear.json")
 
+#Class generated partialy with Claude Ai
 
 def load_mech_files():
     # Return list of files with mechs

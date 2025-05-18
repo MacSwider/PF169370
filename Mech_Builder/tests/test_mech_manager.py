@@ -40,7 +40,16 @@ class TestLoadMechFiles(unittest.TestCase):
 
 
 class TestLoadMechData(unittest.TestCase):
-    """Tests for the load_mech_data function."""
+    """Tests for the load_mech_data function.
+    
+    This test suite verifies the functionality of loading mech data from JSON files.
+    It tests various scenarios including:
+    - Successful loading of valid mech data
+    - Handling of missing files
+    - Processing of custom armor values
+    - Handling of invalid JSON data
+    - Default armor values when not specified
+    """
 
     @patch(
         "builtins.open",
@@ -182,7 +191,15 @@ class TestLoadWeapons(unittest.TestCase):
 
 
 class TestLoadKeywords(unittest.TestCase):
-    """Tests for the load_keywords function."""
+    """Tests for the load_keywords function.
+    
+    This test suite verifies the functionality of loading keyword definitions from JSON files.
+    It tests various scenarios including:
+    - Successful loading of valid keyword data
+    - Handling of non-existent files
+    - Processing of empty files
+    - Loading from custom file paths
+    """
 
     @patch("os.path.exists")
     @patch("os.path.getsize")

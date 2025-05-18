@@ -8,6 +8,15 @@ from src.saves import save_list_to_txt, load_mechs_from_txt
 
 
 class TestSaveListToTxt(unittest.TestCase):
+    """Tests for the save_list_to_txt function.
+    
+    This test suite verifies the functionality of saving mech lists to text files.
+    It tests various scenarios including:
+    - Successful saving of mech data to a file
+    - Handling of user cancellation during save
+    - Error handling during file operations
+    """
+
     @patch("tkinter.filedialog.asksaveasfilename")
     @patch("builtins.open", new_callable=mock_open)
     @patch("tkinter.messagebox.showinfo")
@@ -110,7 +119,17 @@ class TestSaveListToTxt(unittest.TestCase):
 
 
 class TestLoadMechsFromTxt(unittest.TestCase):
-    """Tests for loading mechs from text file"""
+    """Tests for loading mechs from text file.
+    
+    This test suite verifies the functionality of loading mech data from text files.
+    It tests various scenarios including:
+    - Successful loading of valid mech data
+    - Handling of user cancellation during load
+    - Processing of simple format files
+    - Handling of empty files
+    - Processing of invalid weapon formats
+    - Handling of invalid line formats
+    """
 
     @patch("tkinter.filedialog.askopenfilename")
     @patch(

@@ -13,6 +13,7 @@ from src.mech_manager import (
 )
 from src.saves import save_list_to_txt, load_mechs_from_txt
 
+#Class generated partialy with Claude Ai
 
 MAX_MECHS = 6
 
