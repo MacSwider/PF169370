@@ -4,7 +4,6 @@ import os
 import sys
 
 
-
 from src.mech_manager import (
     load_mech_files,
     load_mech_data,
@@ -46,7 +45,10 @@ class TestLoadMechData(unittest.TestCase):
     @patch(
         "builtins.open",
         new_callable=mock_open,
-        read_data='{"name": "Test Mech", "HP": 10, "Kinetic-Armor": 5, "Thermal-Armor": 3, "Chemical-Armor": 2}',
+        read_data=(
+            '{"name": "Test Mech", "HP": 10, "Kinetic-Armor": 5, '
+            '"Thermal-Armor": 3, "Chemical-Armor": 2}'
+        ),
     )
     def test_load_mech_data_success(self, mock_file):
         result = load_mech_data("test_mech")
@@ -109,7 +111,10 @@ class TestLoadMechData(unittest.TestCase):
     @patch(
         "builtins.open",
         new_callable=mock_open,
-        read_data='{"name": "Test Mech", "HP": 10, "SugarArmor": 5, "PlotArmor": 3, "ChemicalArmor": 2}',
+        read_data=(
+            '{"name": "Test Mech", "HP": 10, "SugarArmor": 5, '
+            '"PlotArmor": 3, "ChemicalArmor": 2}'
+        ),
     )
     def test_load_mech_data_nonstandard_armor_names(self, mock_file):
         result = load_mech_data("test_mech")
@@ -365,7 +370,11 @@ class TestDescribeWeapon(unittest.TestCase):
         self.assertIn("Keywords: None", result)
 
     def test_describe_weapon_missing_fields(self):
-        weapons = {"test_weapon": {"keywords": ["Kinetic", "Rapid Fire"]}}
+        weapons = {
+            "test_weapon": {
+                "keywords": ["Kinetic", "Rapid Fire"]
+            }
+        }
         result = describe_weapon("test_weapon", weapons)
         self.assertIn("Damage Type: Kinetic", result)
         self.assertIn("Aim Assist: None", result)

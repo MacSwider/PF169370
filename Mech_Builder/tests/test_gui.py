@@ -9,16 +9,11 @@ from tkinter import messagebox
 
 from src.gui import MechManagerApp
 from src.mech_manager import (
-    load_mech_files,
-    load_weapons,
-    load_mech_data,
-    load_wargear,
+
     calculate_carrying_weight,
     ARM_WEAPON_FILE,
-    BACK_WEAPON_FILE,
-)
-from src.saves import save_list_to_txt, load_mechs_from_txt
 
+)
 
 MAX_MECHS = 6
 
@@ -216,7 +211,6 @@ class TestMechManagerAppInit(BaseMechManagerTest):
         # Check scrollable frame setup
         canvas = None
         scrollbar = None
-        scrollable_frame = None
 
         for child in self.root.winfo_children():
             if isinstance(child, tk.Frame):
@@ -366,9 +360,9 @@ class TestMechOperations(BaseMechManagerTest):
         with patch("tkinter.messagebox.askyesno", return_value=True):
             self.app.remove_mech(mech, mock_frame)
 
-        # Only first occurrence should be removed
-        self.assertEqual(self.app.mech_list.count(mech), 2)
-        mock_frame.destroy.assert_called_once()
+            # Only first occurrence should be removed
+            self.assertEqual(self.app.mech_list.count(mech), 2)
+            mock_frame.destroy.assert_called_once()
 
     def test_remove_mech_cancelled(self):
         """Test cancelling the removal of a mech."""
@@ -379,9 +373,9 @@ class TestMechOperations(BaseMechManagerTest):
         with patch("tkinter.messagebox.askyesno", return_value=False):
             self.app.remove_mech(mech, mock_frame)
 
-        # Mech should not be removed when cancelled
-        self.assertIn(mech, self.app.mech_list)
-        mock_frame.destroy.assert_not_called()
+            # Mech should not be removed when cancelled
+            self.assertIn(mech, self.app.mech_list)
+            mock_frame.destroy.assert_not_called()
 
 
 class TestWeaponOperations(BaseMechManagerTest):
@@ -393,7 +387,11 @@ class TestWeaponOperations(BaseMechManagerTest):
         test_frame = tk.Frame(self.root)
 
         self.app.create_weapon_dropdown(
-            test_frame, added_mech, "left_arm", "Test Weapon", self.arm_weapons_data
+            test_frame,
+            added_mech,
+            "left_arm",
+            "Test Weapon",
+            self.arm_weapons_data
         )
 
         option_menu = None
@@ -415,22 +413,6 @@ class TestWeaponOperations(BaseMechManagerTest):
                     string_var = self.app.root.children[var]
                     break
 
-        if string_var is None:
-            for widget in test_frame.winfo_children():
-                if isinstance(widget, tk.LabelFrame):
-                    for name in widget.children:
-                        child = widget.children[name]
-                        if hasattr(child, "get") and callable(child.get):
-                            try:
-                                value = child.get()
-                                if value in ["None"] + list(
-                                    self.arm_weapons_data.keys()
-                                ):
-                                    string_var = child
-                                    break
-                            except:
-                                pass
-
         if string_var:
             string_var.set("Rifle")
             self.root.update()
@@ -445,16 +427,27 @@ class TestWeaponOperations(BaseMechManagerTest):
 
         self.assertEqual(mech["carrying_weight"], 0)
 
-        mech["weapons"] = {"left_arm": "Rifle", "right_arm": "Heavy Cannon"}
+        mech["weapons"] = {
+            "left_arm": "Rifle",
+            "right_arm": "Heavy Cannon"
+        }
 
-        calculate_carrying_weight(mech, self.app.arm_weapons, self.app.back_weapons)
+        calculate_carrying_weight(
+            mech,
+            self.app.arm_weapons,
+            self.app.back_weapons
+        )
 
         self.assertEqual(mech["carrying_weight"], 15)
 
         mech["weapons"]["back_left"] = "Missile Pod"
         mech["weapons"]["back_right"] = "Shield Generator"
 
-        calculate_carrying_weight(mech, self.app.arm_weapons, self.app.back_weapons)
+        calculate_carrying_weight(
+            mech,
+            self.app.arm_weapons,
+            self.app.back_weapons
+        )
 
         self.assertEqual(mech["carrying_weight"], 28)
         self.assertTrue(mech["carrying_weight"] > mech["max_carry"])
@@ -469,7 +462,11 @@ class TestWeaponOperations(BaseMechManagerTest):
         mech["max_carry"] = 5
 
         self.app.create_weapon_dropdown(
-            test_frame, mech, "left_arm", "Test Weapon", self.arm_weapons_data
+            test_frame,
+            mech,
+            "left_arm",
+            "Test Weapon",
+            self.arm_weapons_data
         )
 
         string_var = None
@@ -523,7 +520,9 @@ class TestWeaponOperations(BaseMechManagerTest):
 
         def find_dropdown_frames(widget):
             for child in widget.winfo_children():
-                if isinstance(child, tk.LabelFrame) and ("Back" in child.cget("text")):
+                if isinstance(child, tk.LabelFrame) and (
+                    "Back" in child.cget("text")
+                ):
                     dropdown_frames.append(child)
                 find_dropdown_frames(child)
 
@@ -545,13 +544,25 @@ class TestWeaponOperations(BaseMechManagerTest):
 
         test_frame = tk.Frame(self.root)
         self.app.create_weapon_dropdown(
-            test_frame, mech, "left_arm", "Left Arm", self.arm_weapons_data
+            test_frame,
+            mech,
+            "left_arm",
+            "Left Arm",
+            self.arm_weapons_data
         )
         self.app.create_weapon_dropdown(
-            test_frame, mech, "right_arm", "Right Arm", self.arm_weapons_data
+            test_frame,
+            mech,
+            "right_arm",
+            "Right Arm",
+            self.arm_weapons_data
         )
         self.app.create_weapon_dropdown(
-            test_frame, mech, "back_left", "Back Left", self.back_weapons_data
+            test_frame,
+            mech,
+            "back_left",
+            "Back Left",
+            self.back_weapons_data
         )
 
         string_vars = []
@@ -583,7 +594,11 @@ class TestWeaponOperations(BaseMechManagerTest):
 
         test_frame = tk.Frame(self.root)
         self.app.create_weapon_dropdown(
-            test_frame, mech, "left_arm", "Left Arm", self.arm_weapons_data
+            test_frame,
+            mech,
+            "left_arm",
+            "Left Arm",
+            self.arm_weapons_data
         )
 
         string_var = None
@@ -642,12 +657,12 @@ class TestWeaponOperations(BaseMechManagerTest):
         mech["weapons"]["left_arm"] = "NonexistentWeapon"
 
         try:
-            calculate_carrying_weight(mech, self.app.arm_weapons, self.app.back_weapons)
+            calculate_carrying_weight(
+                mech, self.app.arm_weapons, self.app.back_weapons
+            )
             self.assertEqual(mech["carrying_weight"], 0)
         except KeyError:
-            self.fail(
-                "calculate_carrying_weight raised KeyError with nonexistent weapon"
-            )
+            self.fail("calculate_carrying_weight raised KeyError with nonexistent weapon")
 
 
 class TestWargearOperations(BaseMechManagerTest):
@@ -690,7 +705,7 @@ class TestWargearOperations(BaseMechManagerTest):
                                 if value in ["None"] + list(self.wargear_data.keys()):
                                     string_var = child
                                     break
-                            except:
+                            except (AttributeError, TypeError):
                                 pass
 
         if string_var:
@@ -701,21 +716,6 @@ class TestWargearOperations(BaseMechManagerTest):
             self.assertEqual(
                 self.app.selected_wargear_counts.get("Targeting System", 0), 1
             )
-
-    def test_wargear_limit(self):
-        """Test that wargear limits are enforced."""
-        self.app.add_mech("Medium Mech")
-        self.app.add_mech("Heavy Mech")
-        mech1 = self.app.mech_list[0]
-        mech2 = self.app.mech_list[1]
-
-        frame1 = tk.Frame(self.root)
-        frame2 = tk.Frame(self.root)
-
-        self.app.create_wargear_dropdown(frame1, mech1)
-        self.app.create_wargear_dropdown(frame2, mech2)
-
-        var1 = tk.StringVar(value="None")
 
     def test_wargear_none_selection(self):
         """Test selecting None as wargear."""
@@ -780,7 +780,10 @@ class TestAbilitiesAndKeywords(BaseMechManagerTest):
         self.assertGreaterEqual(len(labels), 1)
 
         label_texts = [lbl.cget("text") for lbl in labels]
-        self.assertIn("Reduces incoming damage from all sources.", label_texts)
+        self.assertIn(
+            "Reduces incoming damage from all sources.",
+            label_texts
+        )
 
         abilities_window.destroy()
 
@@ -799,7 +802,10 @@ class TestAbilitiesAndKeywords(BaseMechManagerTest):
 
         abilities_window = None
         for child in self.root.winfo_children():
-            if isinstance(child, tk.Toplevel) and child.title() == "Mechs abilities":
+            if (
+                isinstance(child, tk.Toplevel)
+                and child.title() == "Mechs abilities"
+            ):
                 abilities_window = child
                 break
 
@@ -915,7 +921,10 @@ class TestSaveLoadOperations(BaseMechManagerTest):
         """Test saving mechs to file."""
         self.app.add_mech("Medium Mech")
         mech = self.app.mech_list[0]
-        mech["weapons"] = {"left_arm": "Rifle", "right_arm": "Heavy Cannon"}
+        mech["weapons"] = {
+            "left_arm": "Rifle",
+            "right_arm": "Heavy Cannon"
+        }
         mech["wargear"] = "Targeting System"
 
         with patch("src.gui.save_list_to_txt") as mock_save:
@@ -1023,7 +1032,7 @@ class TestUIComponents(BaseMechManagerTest):
         self.assertIn("back_right", heavy_mech["weapons"])
 
     def test_mech_type_specific_weapon_slots(self):
-        """Test that different mech types have appropriate weapon slot configurations."""
+        """Test that different mech types have appropriate weapon slots."""
         self.app.add_mech("Light Mech")
         self.app.add_mech("Medium Mech")
         self.app.add_mech("Heavy Mech")
@@ -1186,7 +1195,8 @@ class TestLoadMechsFromFile(BaseMechManagerTest):
         with (
             patch("src.gui.load_mechs_from_txt", return_value=test_data),
             patch(
-                "src.gui.load_mech_data", return_value={"name": "Test Mech", "HP": 10}
+                "src.gui.load_mech_data",
+                return_value={"name": "Test Mech", "HP": 10}
             ),
         ):
             self.app.load_mechs_from_file()

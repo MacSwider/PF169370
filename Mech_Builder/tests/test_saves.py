@@ -4,7 +4,6 @@ import sys
 import os
 
 
-
 from src.saves import save_list_to_txt, load_mechs_from_txt
 
 
